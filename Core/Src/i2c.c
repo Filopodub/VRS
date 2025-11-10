@@ -23,7 +23,6 @@
 /* USER CODE BEGIN 0 */
 #include "stm32f3xx_ll_utils.h"
 
-uint8_t i2c_rx_data = 0;
 
 /* USER CODE END 0 */
 

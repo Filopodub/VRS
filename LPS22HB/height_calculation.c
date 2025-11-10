@@ -35,22 +35,7 @@ void Height_SetReferencePressure(float pressure_hPa)
 float Height_GetRelativeHeight(float current_pressure_hPa)
 {
     float height_meters;
-    
-    /* Barometric formula for altitude calculation:
-     * h = 44330 * (1 - (P/P0)^0.1903)
-     * 
-     * Where:
-     * - 44330 is a constant derived from ISA model (in meters)
-     * - P is the current pressure
-     * - P0 is the reference pressure
-     * - 0.1903 ≈ 1/5.255 (adiabatic index for air)
-     * 
-     * This formula assumes:
-     * - Standard temperature lapse rate
-     * - Dry air
-     * - Valid for altitudes up to ~11 km
-     */
-    
+
     height_meters = 44330.0f * (1.0f - powf(current_pressure_hPa / reference_pressure_hPa, 0.1903f));
     
     return height_meters;
